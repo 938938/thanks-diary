@@ -23,27 +23,27 @@ export type Database = {
           pin: string | null
           text: string | null
           type: string | null
-          writter: number | null
+          writter: string | null
         }
         Insert: {
           color?: string | null
           created_at?: string | null
-          id: number
+          id?: never
           likes?: number | null
           pin?: string | null
           text?: string | null
           type?: string | null
-          writter?: number | null
+          writter?: string | null
         }
         Update: {
           color?: string | null
           created_at?: string | null
-          id?: number
+          id?: never
           likes?: number | null
           pin?: string | null
           text?: string | null
           type?: string | null
-          writter?: number | null
+          writter?: string | null
         }
         Relationships: []
       }
