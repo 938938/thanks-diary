@@ -6,4 +6,5 @@ export type Item = {
   writter: string;
   pin: string;
   color: string;
+  font: string;
 };
