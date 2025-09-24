@@ -18,6 +18,7 @@ export type Database = {
         Row: {
           color: string | null
           created_at: string | null
+          font: string | null
           id: number
           likes: number | null
           pin: string | null
@@ -28,7 +29,8 @@ export type Database = {
         Insert: {
           color?: string | null
           created_at?: string | null
-          id?: never
+          font?: string | null
+          id?: number
           likes?: number | null
           pin?: string | null
           text?: string | null
@@ -38,7 +40,8 @@ export type Database = {
         Update: {
           color?: string | null
           created_at?: string | null
-          id?: never
+          font?: string | null
+          id?: number
           likes?: number | null
           pin?: string | null
           text?: string | null
