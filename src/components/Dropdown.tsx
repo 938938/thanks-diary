@@ -72,7 +72,7 @@ const Dropdown = ({
   return (
     <Component>
       <SelectButton type='button' onClick={onClickSelect}>
-        <Select>{selected}</Select>
+        <Select>{selected || data[0]}</Select>
       </SelectButton>
       {isDropDown && (
         <DropDown>
