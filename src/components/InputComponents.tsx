@@ -11,6 +11,9 @@ const InputBox = styled.div`
 const Textarea = styled.textarea`
   width: 100%;
 `;
+const DropBoxs = styled.div`
+  display: flex;
+`;
 const ConfirmBtn = styled.button``;
 
 const InputComponents = () => {
@@ -26,10 +29,27 @@ const InputComponents = () => {
       pin,
       font,
     });
+    setText(() => '');
   };
   return (
     <InputBox>
-      <Dropdown data={['red', 'blue', 'black', 'green']} selected={color} setSelected={setColor} />
+      <DropBoxs>
+        <Dropdown
+          data={['red', 'blue', 'black', 'green']}
+          selected={color}
+          setSelected={setColor}
+        />
+        <Dropdown
+          data={['star', 'flower', 'abc', 'def']}
+          selected={pin}
+          setSelected={setPin}
+        />
+        <Dropdown
+          data={['red', 'blue', 'black', 'green']}
+          selected={font}
+          setSelected={setFont}
+        />
+      </DropBoxs>
       <Textarea
         onChange={(e) => {
           setText(e.target.value);

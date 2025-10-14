@@ -1,6 +1,6 @@
 'use client';
 
-import { Dispatch, useState } from 'react';
+import { Dispatch, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Component = styled.div`
@@ -69,6 +69,9 @@ const Dropdown = ({
   const onClickSelect = () => {
     setIsDropDown(!isDropDown);
   };
+  useEffect(() => {
+    setSelected(data[0]);
+  }, []);
   return (
     <Component>
       <SelectButton type='button' onClick={onClickSelect}>
