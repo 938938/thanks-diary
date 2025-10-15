@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Dropdown from './Dropdown';
 import { useState } from 'react';
 import useCreateItem from '@/hooks/useCreateItem';
+import useSetId from '@/hooks/useSetId';
 
 const InputBox = styled.div`
   padding: 10px;
@@ -18,6 +19,7 @@ const ConfirmBtn = styled.button``;
 
 const InputComponents = () => {
   const { mutate } = useCreateItem();
+  const id = useSetId();
   const [text, setText] = useState<string>('');
   const [color, setColor] = useState<string>('');
   const [pin, setPin] = useState<string>('');
@@ -28,6 +30,7 @@ const InputComponents = () => {
       color,
       pin,
       font,
+      writter: id,
     });
     setText(() => '');
   };
