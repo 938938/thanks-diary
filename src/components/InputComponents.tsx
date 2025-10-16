@@ -54,6 +54,7 @@ const InputComponents = () => {
         />
       </DropBoxs>
       <Textarea
+        value={text}
         onChange={(e) => {
           setText(e.target.value);
         }}
