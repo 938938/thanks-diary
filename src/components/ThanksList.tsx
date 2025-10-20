@@ -1,6 +1,7 @@
 'use client';
 
 import useInitList from '@/hooks/useInitList';
+import ThanksPost from './ThanksPost';
 
 const ThanksList = () => {
   const { data } = useInitList();
@@ -8,7 +9,7 @@ const ThanksList = () => {
     <div>
       {data &&
         data.length > 0 &&
-        data?.map((item) => <div key={item.id}>{item.text}</div>)}
+        data?.map((item) => <ThanksPost key={item.id} data={item} />)}
     </div>
   );
 };
