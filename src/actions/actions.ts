@@ -34,3 +34,16 @@ export const getList = async (): Promise<Item[] | null> => {
   }
   return data;
 };
+
+export const deleteItem = async (id: string) => {
+  const { data, error } = await supabase
+    .from('diarylist')
+    .delete()
+    .eq('id', id);
+
+  if (error) {
+    errorHandler(error);
+  }
+
+  return data;
+};
