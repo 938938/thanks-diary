@@ -35,11 +35,13 @@ export const getList = async (): Promise<Item[] | null> => {
   return data;
 };
 
-export const deleteItem = async (id: string) => {
+export const deleteItem = async (id: number) => {
+  console.log(id);
   const { data, error } = await supabase
     .from('diarylist')
     .delete()
-    .eq('id', id);
+    .eq('id', id)
+    .select();
 
   if (error) {
     errorHandler(error);
