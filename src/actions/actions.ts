@@ -28,7 +28,10 @@ export const createItem = async (item: ItemInsert) => {
 };
 
 export const getList = async (): Promise<Item[] | null> => {
-  const { data, error } = await supabase.from('diarylist').select('*');
+  const { data, error } = await supabase
+    .from('diarylist')
+    .select('*')
+    .order('id', { ascending: true });
   if (error) {
     errorHandler(error);
   }
@@ -36,10 +39,23 @@ export const getList = async (): Promise<Item[] | null> => {
 };
 
 export const deleteItem = async (id: number) => {
-  console.log(id);
   const { data, error } = await supabase
     .from('diarylist')
     .delete()
+    .eq('id', id)
+    .select();
+
+  if (error) {
+    errorHandler(error);
+  }
+
+  return data;
+};
+
+export const addLikesItem = async (id: number, likes: number) => {
+  const { data, error } = await supabase
+    .from('diarylist')
+    .update({ likes: likes })
     .eq('id', id)
     .select();
 
