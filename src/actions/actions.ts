@@ -31,7 +31,7 @@ export const getList = async (): Promise<Item[] | null> => {
   const { data, error } = await supabase
     .from('diarylist')
     .select('*')
-    .order('id', { ascending: true });
+    .order('id', { ascending: false });
   if (error) {
     errorHandler(error);
   }
