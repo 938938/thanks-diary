@@ -38,7 +38,7 @@ const InputComponents = () => {
     <InputBox>
       <DropBoxs>
         <Dropdown
-          data={['red', 'blue', 'black', 'green']}
+          data={['rose', 'pink', 'mint', 'blue','isabelline','lavender','winkle']}
           selected={color}
           setSelected={setColor}
         />
